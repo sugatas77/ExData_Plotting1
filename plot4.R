@@ -13,17 +13,18 @@ par(mfrow=c(2,2))
 
 #Plot the graphs
 with(myNewPlot,{
- plot(myDateTimeDT, Global_active_power,ylab="Global Active Power (kilowatts)", xlab="",type="l",yaxp = c(0,6,3)) 	#top left
- plot(myDateTimeDT,Voltage, type="l",xlab="datetime",yaxp=c(234,246,3))							#top right
-															#bottom left
+ plot(myDateTimeDT, Global_active_power,ylab="Global Active Power (kilowatts)", xlab="",type="l",yaxp = c(0,6,3)) #top left
+ plot(myDateTimeDT,Voltage, type="l",xlab="datetime",yaxp=c(234,246,3))						#top right
+														#bottom left
  {
  plot(myDateTimeDT, Sub_metering_1, type="l",col="black", ylab="Energy sub metering", xlab="",yaxp = c(0,30,3))
 with(myNewPlot, lines(myDateTimeDT, Sub_metering_2,  col="Red"))
 with(myNewPlot, lines(myDateTimeDT, Sub_metering_3, col="Blue"))
-legend("topright", col = c("black", "red", "blue"), legend = c("sub_metering_1","sub_metering_2","sub_metering_3"), lty="solid", cex=.65,bty="n")	#legend with no border
+legend("topright", col = c("black", "red", "blue"), c("sub_metering_1","sub_metering_2","sub_metering_3"), 
+	lty="solid", cex=.65,bty="n")										#legend with no border
 }
 
- plot(myDateTimeDT,  Global_reactive_power, type="l", xlab="datetime", yaxp=c(0,0.5,5))					#bottom right
+ plot(myDateTimeDT,  Global_reactive_power, type="l", xlab="datetime", yaxp=c(0,0.5,5))				#bottom right
 }
  )
  
